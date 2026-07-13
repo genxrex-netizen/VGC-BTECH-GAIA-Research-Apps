@@ -1,0 +1,28 @@
+{
+  "_readme": "Raw GAIA protocol frames captured live via a custom GAIA Console testbed against two real radios: 'ob' = VGC VR-N7600 (firmware 0.9.2), 'pi4' = BTech UV-Pro (firmware 0.9.3). Frame format: 00 02 80 <cmd_id> <status_byte> <payload...>. See docs/FINDINGS.md for full analysis.",
+  "commands": {
+    "1_GET_DEV_ID": {
+      "ob":  "000280010089b6c1e8fee3ddfb7ebe362b09a1c875538b7c3ff67a04fca922e364ea41f05b98d4622b22d384f83a7ddd5caa59edd33cd54d9491f1f1e21974f3bfc818a336",
+      "pi4": "0002800100d47c8ab999e36982af5f6ccea03f6bd5782758480d2c65a9cbfd86b1d4edaadb06d41e62addf6fd2709abc8952dd0a68aba1c324884432a6b9238a7713153a57"
+    },
+    "29_READ_ADVANCED_SETTINGS": {
+      "ob":  "0002801d0040694089808800e100880226819001e0412c4190bebe136413570d0f2219283c61ff26191b1d1f21232527294334351abcceeeee00000554445567ffff01555574fffffff0000000065555568afffff042237ffffffff00000000fca44abdffffff00025400000000000978beffffd8abbacefff000000000000",
+      "pi4": "0002801d00406c4088808800ae012c02268190020840000000bebe136413570d08110a163f79ff26191b1d1f21232527295425351a1cceeeee000003234679adffff01523435fffffff00000000b86678acdfffff042237ffffffff00000000fb999abdffffff0a60100000000000000000fffffffffffff00000000000000"
+    },
+    "37_READ_RDA1846S_AGC": {
+      "ob_idle":    "000280250020a2e800",
+      "ob_keyed":   "000280250020a2e800",
+      "pi4_idle":   "000280250020a2e800",
+      "pi4_keyed":  "000280250020a2e800",
+      "_note": "Captured under 4 conditions: 2 radio models x idle/live-signal (PTT held on a second radio during capture). All 4 identical -> confirmed static, not live RF state."
+    },
+    "39_READ_FREQ_RANGE": {
+      "ob":  "000280270040694089808800e100880226819001e0412c4190",
+      "pi4": "0002802700406c4088808800ae012c02268190020840000000"
+    },
+    "63_READ_ADVANCED_SETTINGS2": {
+      "ob":  "0002803f000000000000000000000000000000000000000000000000f00000655660000000000010034674244244645666002925211d1815120f0bff4e00120000",
+      "pi4": "0002803f000000000000000000000000000000000000000000000000f000006655600000000000000005544422346456000025211d1a1715130f0bff1a00120000"
+    }
+  }
+}
