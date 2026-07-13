@@ -141,14 +141,15 @@ A 9-byte perfect step-+2 arithmetic run, byte-identical on both radios:
 
 ### 4.4 Active-inference testing (all null)
 
-Every real physical setting change tested (channel memory edit, squelch to
-min, TX time limit to 3 min, display brightness to max on both radios in
-both directions, Dual Watch, PTT Follow, Digital Mute) came back
-byte-for-byte identical to baseline against the *whole* 122-byte payload —
-before the record structure above was known. **Not yet retested at the
-per-record level** — re-running any of these against records 2/3
-specifically (the cleanest candidates, fewest differing bytes) would be
-more informative than a whole-payload diff.
+Every real setting change tested — channel memory edit, squelch to min, TX
+time limit to 3 min, display brightness to max on both radios in both
+directions, Dual Watch, PTT Follow, Digital Mute, **and region selection
+(`SET_REGION`, tested 0→1→0 on `pi4` via the protected write path with an
+automatic pre-write backup)** — came back byte-for-byte identical to
+baseline. The region test is notable: it varied cmd 29, cmd 63, **and cmd
+39 (`READ_FREQ_RANGE`) itself**, and none of the three moved a single byte.
+Every operator-facing lever tried so far is null. Round-tripped cleanly
+(region restored to 0, channel count and VFO state unchanged afterward).
 
 ### 4.5 Working theory
 
