@@ -2,7 +2,7 @@
 
 GAIA protocol reverse-engineering for VGC/Benshi-family ham radios (BTech
 UV-Pro, VGC VR-N7600, RadioOddity GA-5WB, Vero VR-N76/VR-N7500). This is the
-Bluetooth app-control protocol these radios use — not to be confused with
+Bluetooth app-control protocol these radios use — not to be confused with the KISS TNC,
 DMR, APRS, or the RDA1846S RF chip's own register interface (though one GAIA
 command reads directly from it — see below).
 
